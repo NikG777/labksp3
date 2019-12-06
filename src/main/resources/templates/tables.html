@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>table</title>
+    <link rel = "stylesheet" th:href="@{/css/style.css}" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type="text/javascript" th:src="@{css/main.js}" src = "../static/css/main.js"> </script>
+
+</head>
+<body>
+<nav class="site-header sticky-top py-1">
+    <div class="container d-flex flex-column flex-md-row justify-content-between">
+        <a class="py-2" href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="d-block mx-auto"><circle cx="12" cy="12" r="10"></circle><line x1="14.31" y1="8" x2="20.05" y2="17.94"></line><line x1="9.69" y1="8" x2="21.17" y2="8"></line><line x1="7.38" y1="12" x2="13.12" y2="2.06"></line><line x1="9.69" y1="16" x2="3.95" y2="6.06"></line><line x1="14.31" y1="16" x2="2.83" y2="16"></line><line x1="16.62" y1="12" x2="10.88" y2="21.94"></line></svg>
+        </a>
+        <a class="py-2 d-none d-md-inline-block" th:href="@{/index}">Главная</a>
+        <a class="py-2 d-none d-md-inline-block" th:href="@{/second_page}">Подсчет значения</a>
+        <a class="py-2 d-none d-md-inline-block" th:href="@{/tables}">Таблица</a>
+    </div>
+</nav>
+<button class = "btn btn-succes nBtn">Новое поле</button>
+<div class="container">
+    <div class="card">
+        <hr class = "card-block">
+<table class = "table table-hover">
+    <thead>
+    <tr>
+        <th>Название</th>
+        <th>Описание</th>
+        <th>Сложность</th>
+        <th>info</th>
+        <th>info</th>
+        <th>info</th>
+
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each = "place : ${listPlaces}">
+        <td th:text = "${place.name} " >1</td>
+        <td th:text = "${place.location} " >1</td>
+        <td th:text = "${place.category_id} " >1</td>
+        <td th:text = "${place.difficulty} " >1</td>
+        <td><a th:href = "@{findId/(id=${place.id})}" class = "btn btn-primary eBtn">Edit</a> </td>
+        <td><a th:href = "@{delete(id=${place.id})}" class = "btn btn-danger delBtn">Delete</a> </td>
+    </tr>
+    </tbody>
+</table>
+        <hr/>
+        <ul class = "nav nav-pills">
+            <li class = "nav-item" th:each = " i : ${#numbers.sequence(0,listPlaces.totalPages-1)}">
+            <a th:href = "@{/tables(page=${i})}" th:text = "${i}" class = "nav-link"
+            th:classappend="${currentPage}==${i}?'active':''">
+            </a>
+            </li>
+        </ul>
+
+</div>
+
+    <div class="myForm">
+        <form th:action="@{/save} " method = "post">
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Update or Create</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+
+
+                        <div class="form-group">
+                            <label for="name" class="col-form-label">Name:</label>
+                            <input type="text" class="form-control" id="name" name = "name" value=""/>
+                        </div>
+                        <div class="form-group">
+                            <label for="category_id" class="col-form-label">Category_id:</label>
+                            <input type="text" class="form-control" id="category_id" name = "category_id" value=""/>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <input type="submit" class="btn btn-primary" value = "save"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+</form>
+    </div>
+
+
+    <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabe2">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                  <p class="alert alert-danger">
+                      Вы уверены?
+                  </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <a href ="" class="btn btn-danger" id = "delRef">Delete</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,1 @@
+$('#myTable > tbody:last-child').append('<tr>...</tr><tr>...</tr>');
