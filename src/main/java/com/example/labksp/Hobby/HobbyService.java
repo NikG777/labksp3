@@ -1,36 +1,38 @@
-package com.example.labksp;
+package com.example.labksp.Hobby;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class PlaceService {
+public class HobbyService {
     @Autowired
-    private PlaceRepository repo;
+    private HobbyRepository repo;
 
-    public List<Place> listAll()
+    public List<Hobby> listAll()
     {
-        return repo.findAll();
+        return repo.findAllByOrderById();
     }
-    public void save(Place place)
+    public void save(Hobby hobby)
     {
-        repo.save(place);
+        repo.save(hobby);
     }
-    public Place get(long id)
+    public Hobby get(long id)
     {
         return repo.findById(id);
     }
     public Page viewPage(int page)
     {
-        return repo.findAll(PageRequest.of(page,15));
+        return repo.findAll(PageRequest.of(page,15, Sort.by(Sort.Direction.ASC, "id")));
     }
     public void delete(long id)
     {
         repo.deleteById(id);
+
     }
 //    public void update(Long id,Places place)
 //    {

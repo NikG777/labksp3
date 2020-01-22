@@ -1,0 +1,393 @@
+body {
+	width: 100%;
+    display: block;
+    position: relative;
+    min-width: 260px;
+}
+
+.header-info {
+	background: #3498DB;
+	box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.4);
+	border-radius: 5px;
+	min-height: 55px;
+}
+
+.header-layer {
+	/*line-height: 55px;*/
+}
+
+main {
+	margin-top: 65px;
+	background-image: url('../images/kek.svg');
+    background-size: 100%;
+    background-position: center center;
+}
+
+@font-face {
+	font-family: 'Proxima Nova';
+	src: url('ProximaNova-Regular.eot');
+	src: local('Proxima Nova Regular'), local('ProximaNova-Regular'),
+		url('../fonts/ProximaNova-Regular.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/ProximaNova-Regular.woff') format('woff'),
+		url('../fonts/ProximaNova-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Proxima Nova Rg';
+	src: url('ProximaNova-Bold.eot');
+	src: local('../fonts/Proxima Nova Bold'), local('ProximaNova-Bold'),
+		url('../fonts/ProximaNova-Bold.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/ProximaNova-Bold.woff') format('woff'),
+		url('../fonts/ProximaNova-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+.head-menu {
+	margin: 0;
+    padding: 0;
+}
+
+.head-menu li {
+	list-style: none;
+	display: inline-block;
+}
+
+.head-menu .active {
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 76.56%), #3498DB;
+}
+
+.head-menu a {
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	line-height: 55px;
+	display: flex;
+	align-items: center;
+	text-align: center;
+	text-decoration-line: underline;
+
+	/* Gray 5 */
+
+	color: #E0E0E0;
+	width: 205px;
+	display: inline-block;
+	text-decoration: none;
+}
+
+.head-menu a span {
+    border-bottom: 1px solid #ffffff;
+}
+
+.head-menu-bold-active {
+    font-weight: bold!important;
+}
+
+.line55 {
+	line-height: 55px;
+}
+
+.user-image {
+	max-width: 337px;
+    max-height: 337px;
+    width: 100%;
+    height: 100%;
+	display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.title-prof {
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 48px;
+	line-height: 58px;
+	align-items: center;
+	text-align: center;
+	text-indent: 15px;
+	height: 77px;
+}
+
+.title-prof span {
+	color: #3498DB;
+}
+
+.rang-slider-layer {
+	margin-top: 85px;
+}
+
+.rang-slider {
+	background: #E0E0E0;
+	border-radius: 25px;
+	width: 100%;
+	height: 29px;
+	/*position: relative;*/
+}
+
+.rang-slider span {
+	/*position: absolute;*/
+	/*left: 0;*/
+	float: left;
+	min-width: 1%;
+	height: 29px;
+
+	background: linear-gradient(90deg, #3498DB 5.22%, #8E44AD 100%);
+    height: 29px;
+    border-radius: 25px;
+}
+
+.dop-text-rang {
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 22px;
+	align-items: center;
+	text-indent: 15px;
+
+	/* Gray 3 */
+	color: #828282;
+}
+
+.title-new-layer {
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 48px;
+	line-height: 58px;
+	align-items: center;
+	text-align: center;
+	text-indent: 15px;
+	margin-top: 60px;
+}
+
+.title-new-layer span {
+	color: #3498DB;
+}
+
+.chell-list {
+	background: #F2F2F2;
+	border-radius: 9px;
+	padding: 17px;
+	margin-top: 26px;
+}
+
+.city-text {
+	line-height: 55px;
+}
+
+.nomp {
+	margin: 0;
+	padding: 0;
+}
+
+.chell-item {
+	width: 330px;
+	height: 300px;
+	background: #FFFFFF;
+	box-shadow: 4px 7px 4px rgba(0, 0, 0, 0.25);
+	display: inline-block;
+	position: relative;
+    padding: 25px 25px 0 25px;
+    margin: 0 20px 21px;
+}
+
+.chell-image {
+    width: 100%;
+    min-height: 175px;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin: 0 auto 12px;
+}
+
+.chell-stars {
+	text-align: right;
+	margin: 0 29px;
+	height: 17px;
+}
+
+.chell-star {
+	display: inline-block;
+	width: 17px;
+	height: 17px;
+    float: right;
+	background-image: url('../images/star.png');
+}
+
+.chell-close {
+	background-image: url('close.png');
+	position: absolute;
+	top: 8px;
+	right: 6px;
+}
+
+.chell-close:hover {
+	cursor: pointer;
+}
+
+.chell-title {
+	margin-bottom: 20px;
+	text-align: left;
+}
+
+.load-more {
+	font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 29px;
+    /* display: flex; */
+    align-items: center;
+    text-align: center;
+    text-indent: 15px;
+    text-decoration-line: underline;
+    color: #828282;
+    text-decoration: none;
+}
+
+.load-more a {
+    color: #828282;
+    text-decoration: none;
+}
+
+.load-more span {
+	border-bottom: 1px solid #dddddd;
+}
+
+.layer-dost {
+	width: 511px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.layer-dost-title {
+	font-family: Proxima Nova;
+	font-weight: bold;
+	font-style: normal;
+	font-size: 18px;
+	line-height: 22px;
+	display: block;
+	color: #000000;
+}
+
+.layer-dost-desc {
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-size: 18px;
+	line-height: 22px;
+	display: block;
+	color: #000000;
+}
+
+.layer-dost-image {
+	width: 70px;
+	height: 70px;
+	display: inline-block;
+}
+
+@media (max-width: 575.98px) { 
+	.chell-image
+	{
+		min-height: 100px;
+	}
+
+	.chell-item {
+	    width: 100%;
+	}
+
+
+	.title-new-layer {
+		font-size: 30px;
+	    line-height: 30px;
+	    margin-top: 50px;
+	}
+
+	.title-prof {
+		font-size: 30px;
+		line-height: 77px;
+	}
+
+	.chell-stars {
+		width: 100%;
+		margin: 0;
+	}
+}
+
+@media (max-width: 768px) {
+
+	main {
+	    margin-top: 40px;
+	}
+
+	.rang-slider-layer {
+	    margin-top: 45px;
+	}
+
+	.size-text {
+		font-size: 22px;
+		line-height: 42px;
+	}
+
+	.user-image {
+		height: 200px;
+		width: 200px;
+	}
+
+	.head-menu a {
+		width: 100%!important;
+	}
+
+	.head-menu li {
+	    display: block;
+	}
+
+	.chell-item {
+
+		margin: 0 auto;
+		width: 80%;
+	}
+
+	.chell-image {
+		width: 100%;
+	}
+
+	.chell-title {
+		font-size: 16px;
+	}
+}
+
+@media (max-width: 991.98px) 
+{ 
+	.city-text {
+		white-space: nowrap;
+	}
+
+	.dop-text-rang {
+		margin-top: 20px;
+	}
+
+
+	.head-menu a {
+		width: 150px;
+	}
+
+	.chell-item {
+    	height: auto;
+    	margin: 0 auto;
+	}
+
+	.chell-image {
+		/*margin: 25px 19px 12px 19px;*/
+	}
+}
+
+@media (max-width: 1199.98px) {
+	.chell-item {
+    	margin: 0 auto 20px;
+	}
+}

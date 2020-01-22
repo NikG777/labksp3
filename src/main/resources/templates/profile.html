@@ -1,0 +1,304 @@
+<!Doctype HTML>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./css/pstyle.css">
+    <link rel="stylesheet" type="text/css" href="./css/paf.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+    <style>
+        header,
+        main{
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 300;
+        }
+
+        .hero {
+            background-color: #b2e7ca;
+        }
+
+        .action {
+            background-color: #66d096;
+        }
+
+        .left {
+            background-color: #ffecb2;
+        }
+
+        .ad {
+            background-color: #00b050;
+        }
+
+        .article {
+            background-color: #ffc61a;
+            min-height: 7rem;
+        }
+
+        .right {
+            background-color: #ffd966;
+        }
+
+        .much-text{
+            font-size: 1rem;
+            text-align: left;
+        }
+        .heading{
+            text-align: left;
+        }
+
+        .gradient-header{
+            background-image: linear-gradient(to bottom, #3498DB, #8E44AD);
+            color: #FFFFFF;
+        }
+
+        .logo__inner{
+            font-family: 'Kaushan Script', cursive;
+            font-size: 40px;
+            font-weight: 700;
+            color: white;
+        }
+        .in-header{
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+<!--
+  <div class="container">
+    <div class="lead mb-2 text-center">
+      <span class="d-inline d-sm-none">XS</span>
+      <span class="d-none d-sm-inline d-md-none">SM</span>
+      <span class="d-none d-md-inline d-lg-none">MD</span>
+      <span class="d-none d-lg-inline d-xl-none">LG</span>
+      <span class="d-none d-xl-inline">XL</span>
+    </div>
+  </div>
+-->
+<!-- HEADER -->
+
+
+<div class="container-fluid header-layer p-3 mb-5">
+    <div class="row no-gutters">
+        <div class="col-xs-12 col-md-3 text-center">
+            <div class="logo logo_dop_sett logo__inner line55">
+                ChallengeMe
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-3 col-lg-3 text-lg-left">
+            <div class="city-text">Ваш город - Тут</div>
+        </div>
+        <div class="col-xs-12 col-md-6 col-lg-6 text-right">
+            <ul class="head-menu">
+                <li><a th:href="@{/}"><span>Главная</span></a></li>
+                <li><a th:href="@{/profile}" class="active head-menu-bold-active"><span>Профиль</span></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- MAIN -->
+<main class="main">
+    <div class="container-fluid">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 col-xs-12">
+                    <div class="user-image" style="background-image: url('images/Ellipse1.png');"></div>
+                </div>
+                <div class="col-md-7 col-xs-12">
+                    <div class="title-prof"><span>О</span> себе</div>
+                    <div class="container text-md-left text-center size-text">
+                        <div class="row">
+                            <div class="col-md-6 col-xs-12">Имя: Алексей</div>
+                            <div class="col-md-6 col-xs-12">Город: Москва</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">Ранг: Новичок</div>
+                        </div>
+                    </div>
+                    <div class="container rang-slider-layer">
+                        <div class="row">
+                            <div class="col-lg-8 col-md-12"><div class="rang-slider"><span style="width: 30%;"></span></div></div>
+                            <div class="col-lg-4 col-md-12 dop-text-rang">12/20 звезд до следующего ранга</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 title-new-layer"><span>М</span>ои Челленджи</div>
+        </div>
+    </div>
+
+    <!-- Описание -->
+    <div class="container-fluid chell-list">
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 text-left">
+
+                            <div class="d-flex flex-sm-column flex-md-row flex-wrap">
+
+                                <div class="chell-item">
+                                    <div class="chell-image" style="background-image: url('images/1.png');"></div>
+                                    <div class="chell-stars">
+                                        <div class="chell-star"></div>
+                                        <div class="chell-star"></div>
+                                        <div class="chell-star"></div>
+                                    </div>
+                                    <div class="chell-title">Катание на роликах</div>
+                                </div>
+
+                                <div class="chell-item">
+                                    <div class="chell-image" style="background-image: url('images/2.png');"></div>
+                                    <div class="chell-stars">
+                                        <div class="chell-star"></div>
+                                        <div class="chell-star"></div>
+                                        <div class="chell-star"></div>
+                                    </div>
+                                    <div class="chell-title">Оригами</div>
+                                </div>
+
+                                <div class="chell-item">
+                                    <div class="chell-image" style="background-image: url('images/3.png');"></div>
+                                    <div class="chell-stars">
+                                        <div class="chell-star"></div>
+                                        <div class="chell-star"></div>
+                                        <div class="chell-star"></div>
+                                    </div>
+                                    <div class="chell-title">Лепка вареников</div>
+                                </div>
+
+                                <div class="chell-item">
+                                    <div class="chell-image" style="background-image: url('images/4.png');"></div>
+                                    <div class="chell-stars">
+                                        <div class="chell-star"></div>
+                                        <div class="chell-star"></div>
+                                        <div class="chell-star"></div>
+                                    </div>
+                                    <div class="chell-title">Скиппинг</div>
+                                </div>
+
+                                <div class="chell-item">
+                                    <div class="chell-image" style="background-image: url('images/5.png');"></div>
+                                    <div class="chell-stars">
+                                        <div class="chell-star"></div>
+                                        <div class="chell-star"></div>
+                                        <div class="chell-star"></div>
+                                    </div>
+                                    <div class="chell-title">Большой теннис</div>
+                                </div>
+
+                            </div>
+
+                            <div class="load-more"><a href="#"><span>Загрузить еще...</span></a></div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 title-new-layer mb-5"><span>М</span>ои Достижения</div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="d-flex flex-sm-column flex-md-row flex-wrap">
+                    <div class="layer-dost">
+                        <div class="row no-gutters">
+                            <div class="col-4"><div class="layer-dost-image" style="background-image: url('images/d1.png');"></div></div>
+                            <div class="col-8"><div class="layer-dost-title">Поехали!</div><div class="layer-dost-desc">Поехали! Создать профиль на ChallengeMe!</div></div>
+                        </div>
+                    </div>
+                    <div class="layer-dost">
+                        <div class="row no-gutters">
+                            <div class="col-4"><div class="layer-dost-image" style="background-image: url('images/d2.png');"></div></div>
+                            <div class="col-8"><div class="layer-dost-title">За ЗОЖ!</div><div class="layer-dost-desc">Выполнить Челлендж из категории Спорт.</div></div>
+                        </div>
+                    </div>
+                    <div class="layer-dost">
+                        <div class="row no-gutters">
+                            <div class="col-4"><div class="layer-dost-image" style="background-image: url('images/d3.png');"></div></div>
+                            <div class="col-8"><div class="layer-dost-title">Ученье - свет...</div><div class="layer-dost-desc">Выполнить первый Челлендж.</div></div>
+                        </div>
+                    </div>
+                    <div class="layer-dost">
+                        <div class="row no-gutters">
+                            <div class="col-4"><div class="layer-dost-image" style="background-image: url('images/d4.png');"></div></div>
+                            <div class="col-8"><div class="layer-dost-title">Stranger Thing</div><div class="layer-dost-desc">Выполнить Челлендж из категории Необычно.</div></div>
+                        </div>
+                    </div>
+                    <div class="layer-dost">
+                        <div class="row no-gutters">
+                            <div class="col-4"><div class="layer-dost-image" style="background-image: url('images/d5.png');"></div></div>
+                            <div class="col-8"><div class="layer-dost-title">Пабло Пикассо</div><div class="layer-dost-desc">Выполнить Челлендж из категории Творчетсво.</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="load-more"><a href="#"><span>Загрузить еще...</span></a></div>
+
+    <div class="container mb-5">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="w-100"></div>
+                    <div class="col mt-5">
+                        <div class="wrap-login100-form-btn info-layer-button">
+                            <div class="login100-form-bgbtn"></div>
+                            <div class="login100-form-btn">
+                                Открыть чат
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="w-100"></div>
+                    <div class="col mt-5">
+                        <div class="wrap-login100-form-btn info-layer-button">
+                            <div class="login100-form-bgbtn"></div>
+                            <div class="login100-form-btn">
+                                Предложить
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container-fluid">
+        FOOTER
+    </div>
+</footer>
+
+</body>
+
+</html>

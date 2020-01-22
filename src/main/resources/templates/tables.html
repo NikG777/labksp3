@@ -3,58 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <title>table</title>
-    <link rel = "stylesheet" th:href="@{/css/style.css}" />
+    <link rel = "stylesheet" th:href="@{/css/main.css}" />
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script
-            src="https://code.jquery.com/jquery-3.2.1.min.js"
-            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            type="text/javascript"></script>
+    <script crossorigin="anonymous"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" type="text/javascript"></script>
+    <script crossorigin="anonymous"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script type="text/javascript" th:src="@{css/main.js}" src = "../static/css/main.js"> </script>
+    <link crossorigin="anonymous"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          rel="stylesheet">
+    <script type="text/javascript" th:src="@{js/main.js}" src = "js/main.js"> </script>
 
 </head>
 <body>
-<nav class="site-header sticky-top py-1">
-    <div class="container d-flex flex-column flex-md-row justify-content-between">
-        <a class="py-2" href="#">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="d-block mx-auto"><circle cx="12" cy="12" r="10"></circle><line x1="14.31" y1="8" x2="20.05" y2="17.94"></line><line x1="9.69" y1="8" x2="21.17" y2="8"></line><line x1="7.38" y1="12" x2="13.12" y2="2.06"></line><line x1="9.69" y1="16" x2="3.95" y2="6.06"></line><line x1="14.31" y1="16" x2="2.83" y2="16"></line><line x1="16.62" y1="12" x2="10.88" y2="21.94"></line></svg>
-        </a>
-        <a class="py-2 d-none d-md-inline-block" th:href="@{/index}">Главная</a>
-        <a class="py-2 d-none d-md-inline-block" th:href="@{/second_page}">Подсчет значения</a>
-        <a class="py-2 d-none d-md-inline-block" th:href="@{/tables}">Таблица</a>
-    </div>
-</nav>
 <button class = "btn btn-succes nBtn">Новое поле</button>
-<div class="container">
-    <div class="card">
-        <hr class = "card-block">
-<table class = "table table-hover">
+
+
+<table class = "table">
     <thead>
     <tr>
         <th>Название</th>
         <th>Описание</th>
+        <th>Категория</th>
         <th>Сложность</th>
-        <th>info</th>
-        <th>info</th>
-        <th>info</th>
+        <th>Ссылки на картинки</th>
+        <th>Гайд</th>
+        <th>Видеогайд</th>
+        <th>Упражнение</th>
+        <th>Редакирование</th>
+        <th>Удалить</th>
 
 
     </tr>
     </thead>
     <tbody>
-    <tr th:each = "place : ${listPlaces}">
-        <td th:text = "${place.name} " >1</td>
-        <td th:text = "${place.location} " >1</td>
-        <td th:text = "${place.category_id} " >1</td>
-        <td th:text = "${place.difficulty} " >1</td>
-        <td><a th:href = "@{findId/(id=${place.id})}" class = "btn btn-primary eBtn">Edit</a> </td>
-        <td><a th:href = "@{delete(id=${place.id})}" class = "btn btn-danger delBtn">Delete</a> </td>
+    <tr th:each = "hobby : ${listPlaces}">
+        <td th:text = "${hobby.name} " >1</td>
+        <td th:text = "${hobby.description} " class="col" >1</td>
+        <td th:text = "${hobby.category} " class="col">1</td>
+        <td th:text = "${hobby.difficulty} " class="col">1</td>
+        <td th:text = "${hobby.images} " class="col">1</td>
+        <td th:text = "${hobby.guide} " class="col">1</td>
+        <td th:text = "${hobby.guideVideo} " class="col">1</td>
+        <td th:text = "${hobby.exercise} " >1</td>
+        <td><a th:href = "@{findId/(id=${hobby.id})}" class = "btn btn-primary eBtn">Редактировать</a> </td>
+        <td><a th:href = "@{delete(id=${hobby.id})}" class = "btn btn-danger delBtn">Удалить</a> </td>
     </tr>
     </tbody>
 </table>
-        <hr/>
+
         <ul class = "nav nav-pills">
             <li class = "nav-item" th:each = " i : ${#numbers.sequence(0,listPlaces.totalPages-1)}">
             <a th:href = "@{/tables(page=${i})}" th:text = "${i}" class = "nav-link"
@@ -64,6 +67,9 @@
         </ul>
 
 </div>
+            </div>
+        </div>
+    </div>
 
     <div class="myForm">
         <form th:action="@{/save} " method = "post">
@@ -72,33 +78,60 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Update or Create</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Редактирование</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-
-
-
+                        <div class="form-group1" id = "delid">
+                            <label for="id" class="col-form-label1">ID:</label>
+                            <input type="number" class="form-control" readonly="readonly" id="id" name = "id" value=""/>
+                        </div>
                         <div class="form-group">
-                            <label for="name" class="col-form-label">Name:</label>
+                            <label for="name" class="col-form-label">Имя:</label>
                             <input type="text" class="form-control" id="name" name = "name" value=""/>
                         </div>
                         <div class="form-group">
-                            <label for="category_id" class="col-form-label">Category_id:</label>
-                            <input type="text" class="form-control" id="category_id" name = "category_id" value=""/>
+                            <label for="category" class="col-form-label">Категория:</label>
+                            <input type="text" class="form-control" id="category" name = "category" value=""/>
+                        </div>
+                        <div class="form-group">
+                            <label for="difficulty" class="col-form-label">Сложность:</label>
+                            <input type="text" class="form-control" id="difficulty" name = "difficulty" value=""/>
+                        </div>
+                        <div class="form-group">
+                            <label for="description" class="col-form-label">Описание:</label>
+                            <input type="text" class="form-control" id="description" name = "description" value=""/>
+                        </div>
+                        <div class="form-group">
+                            <label for="images" class="col-form-label">Ссылки на картинки:</label>
+                            <input type="text" class="form-control" id="images" name = "images" value=""/>
+                        </div>
+                        <div class="form-group">
+                            <label for="guide" class="col-form-label">Гайд:</label>
+                            <input type="text" class="form-control" id="guide" name = "guide" value=""/>
+                        </div>
+                        <div class="form-group">
+                            <label for="guideVideo" class="col-form-label">Видеогайд:</label>
+                            <input type="text" class="form-control" id="guideVideo" name = "guideVideo" value=""/>
+                        </div>
+                        <div class="form-group">
+                            <label for="exercise" class="col-form-label">Упражнение:</label>
+                            <input type="text" class="form-control" id="exercise" name = "exercise" value=""/>
                         </div>
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <input type="submit" class="btn btn-primary" value = "save"/>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                        <input type="submit" class="btn btn-primary" value = "Сохранить"/>
                     </div>
                 </div>
             </div>
         </div>
 </form>
+
+
     </div>
 
 
@@ -106,7 +139,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabe2">Modal title</h5>
+                    <h5 class="modal-title" id="exampleModalLabe2">Удаление</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -117,8 +150,8 @@
                   </p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <a href ="" class="btn btn-danger" id = "delRef">Delete</a>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                    <a href ="" class="btn btn-danger" id = "delRef">Удалить</a>
                 </div>
             </div>
         </div>

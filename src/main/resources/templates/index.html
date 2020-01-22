@@ -1,35 +1,277 @@
-<!DOCTYPE html>
+<!Doctype HTML>
 <html lang="ru" xmlns:th="http://www.thymeleaf.org" >
+
 <head>
-    <title>Header</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel = "stylesheet" th:href="@{../css/main.css}" />
+  <link href="https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+  <style>
+    header,
+    main{
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 300;
+    }
+    .hero {
+      background-color: #b2e7ca;
+    }
+    .action {
+      background-color: #66d096;
+    }
+    .left {
+      background-color: #ffecb2;
+    }
+    .ad {
+      background-color: #00b050;
+    }
+    .article {
+      background-color: #ffc61a;
+      min-height: 7rem;
+    }
+    .right {
+      background-color: #ffd966;
+    }
+    .much-text{
+      font-size: 1rem;
+      text-align: left;
+    }
+    .heading{
+      text-align: left;
+    }
+    .gradient-header{
+      background-image: linear-gradient(to bottom, #3498DB, #8E44AD);
+      color: #FFFFFF;
+    }
+    .logo__inner{
+      font-family: 'Kaushan Script', cursive;
+      font-size: 40px;
+      font-weight: 700;
+      color: white;
+    }
+    .in-header{
+      margin-top: 20px;
+    }
+    .back-img{
+      background-image: url(https://psv4.userapi.com/c856216/u105766802/docs/d9/e6e43121d8d8/kek.svg?extra=2sdt3KCGPUHISIHIx98zyZxFNzVXsqNqi50ZDrL_bLcznJLcXULP7ipzZ7D5gl1P2iXdLMTUQT35GdHsQoWFQjRaMToxy481RLbhDVEp3YBqoaO-g2bKjjIMZt_D9tjLT7qa0goVdrknGW0JyfJ_pefgyw&dl=1);
+      background-size: 100%;
+      background-position: center center;
+    }
+    .back-white{
+      background-image: white;
+      text-decoration: none;
+    }
+    .link{
+      color: white;
+      text-decoration: none;
+    }
+    .link:hover{
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
 </head>
-
 <body>
-<nav class="site-header sticky-top py-1">
-    <div class="container d-flex flex-column flex-md-row justify-content-between">
-        <a class="py-2" href="#">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="d-block mx-auto"><circle cx="12" cy="12" r="10"></circle><line x1="14.31" y1="8" x2="20.05" y2="17.94"></line><line x1="9.69" y1="8" x2="21.17" y2="8"></line><line x1="7.38" y1="12" x2="13.12" y2="2.06"></line><line x1="9.69" y1="16" x2="3.95" y2="6.06"></line><line x1="14.31" y1="16" x2="2.83" y2="16"></line><line x1="16.62" y1="12" x2="10.88" y2="21.94"></line></svg>
-        </a>
-        <a class="py-2 d-none d-md-inline-block" th:href="@{/index}">Главная</a>
-        <a class="py-2 d-none d-md-inline-block" th:href="@{/second_page}">Подсчет значения</a>
-        <a class="py-2 d-none d-md-inline-block" th:href="@{/tables}">Таблица</a>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<script>
+  $(document).ready(function(){
+    $(".carousel-caption h5").addClass('animated slideInLeft');
+    $(".carousel-caption p").addClass('animated slideInRight');
+  });
+</script>
+<!--
+<div class="container">
+  <div class="lead mb-2 text-center">
+    <span class="d-inline d-sm-none">XS</span>
+    <span class="d-none d-sm-inline d-md-none">SM</span>
+    <span class="d-none d-md-inline d-lg-none">MD</span>
+    <span class="d-none d-lg-inline d-xl-none">LG</span>
+    <span class="d-none d-xl-inline">XL</span>
+  </div>
+</div>
+-->
+<!-- HEADER -->
+<header class="header gradient-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 logo__inner">ChallengeMe</div>
+      <div class="col-md-8 d-flex align-items-center">
+        <div class="container">
+          <div class="row">
+            <div class="col-6 top-nav h-100">Москва</div>
+            <div class="col-6 social h-100">
+              <a class="link" th:href="@{/profile}">Профиль</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-</nav>
-
-
-
-
-<div class="hero">
-    <h1>Гарянин Никита Андреевич</h1>
-    <h2>Группа: ИКБО-16-17</h2>
-    <h3>Вариант: 6</h3>
-</div>
-</div>
-
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="container">
+          <div class="row">
+            <div class="col in-header">Сегодня 19 декабря, идет 2-ой день </div>
+            <div class="w-100"></div>
+            <div class="col-6 in-header">Искусство</div>
+            <div class="col-6 in-header">★★★☆☆</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="header-title">Рисование портрета</div>
+</header>
+<!-- MAIN -->
+<main class="main back-img">
+  <div class="container-fluid">
+    <!-- Описание -->
+    <div class="row background-img">
+      <div class="col">
+        <div class="container">
+          <div class="row">
+            <div class="col-6">
+              <div class="title-layer">Описание</div>
+            </div>
+            <div class="w-100"></div>
+            <div class="col back-white">
+              <div class="much-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean auctor purus non nunc laoreet faucibus sed vitae nunc. Mauris ultricies lorem sed dui iaculis mollis. Cras leo libero, aliquet ac massa viverra, dictum interdum neque. Curabitur vitae faucibus orci, vitae convallis est. Ut vitae tincidunt nunc, nec volutpat nulla. Cras vel molestie est. Quisque id lacinia erat. Proin maximus massa sed interdum porta. Donec aliquam justo arcu, efficitur imperdiet justo sollicitudin vitae. Vivamus at nunc nec metus gravida sodales sit amet sed lectus. Phasellus finibus ligula eget augue lobortis, sit amet efficitur tortor ultrices. Praesent vel placerat nulla. Nam tellus orci, gravida ut commodo quis, posuere at sem. Sed a nulla varius, fringilla lacus et, euismod lacus. Integer mauris lorem, dictum eget ante eget, hendrerit pellentesque elit. Integer sed felis velit. Phasellus aliquam ut felis id vulputate. Nunc feugiat odio laoreet metus pellentesque pretium. Vivamus porta dignissim orci, tempus laoreet odio ornare id. Suspendisse eu pretium neque. Aliquam bibendum dui non urna pulvinar, id viverra metus commodo. Nulla rhoncus efficitur turpis nec tristique. Donec sodales diam commodo urna ornare aliquam. Nullam non convallis eros, a aliquam nisi. Etiam neque massa, fermentum at turpis vitae, ullamcorper sagittis enim.
+              </div>
+            </div>
+            <div class="w-100"></div>
+            <div class="col-md-1" style = "margin-top: 30px;">
+            </div>
+            <div class="col-md-10" style = "margin-top: 30px;">
+              <div class="container-fluid">
+                <div class="row">
+                  <div id="carouselExample" class="carousel slide" data-ride="carousel" style="margin: 0 auto;">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img class="d-block"  src="https://images.unsplash.com/photo-1488274319148-051ed60a9404?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=747&q=80" alt="First slide">
+                      </div>
+                      <div class="carousel-item">
+                        <img class="d-block"  src="https://images.unsplash.com/photo-1494883759339-0b042055a4ee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Second slide">
+                      </div>
+                      <div class="carousel-item">
+                        <img class="d-block"  src="https://images.unsplash.com/photo-1488274319148-051ed60a9404?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=747&q=80" alt="Third slide">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-1" style = "margin-top: 30px;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Описание конец -->
+  <!-- Гайд -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="title-layer">Гайд</div>
+      </div>
+      <div class="w-100"></div>
+      <div class="col">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="much-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean auctor purus non nunc laoreet faucibus sed vitae nunc. Mauris ultricies lorem sed dui iaculis mollis. Cras leo libero, aliquet ac massa viverra, dictum interdum neque. Curabitur vitae faucibus orci, vitae convallis est. Ut vitae tincidunt nunc, nec volutpat nulla. Cras vel molestie est. Quisque id lacinia erat. Proin maximus massa sed interdum porta. Donec aliquam justo arcu, efficitur imperdiet justo sollicitudin vitae. Vivamus at nunc nec metus gravida sodales sit amet sed lectus. Phasellus finibus ligula eget augue lobortis, sit amet efficitur tortor ultrices. Praesent vel placerat nulla. Nam tellus orci, gravida ut commodo quis, posuere at sem. Sed a nulla varius, fringilla lacus et, euismod lacus. Integer mauris lorem, dictum eget ante eget, hendrerit pellentesque elit. Integer sed felis velit. Phasellus aliquam ut felis id vulputate. Nunc feugiat odio laoreet metus pellentesque pretium. Vivamus porta dignissim orci, tempus laoreet odio ornare id. Suspendisse eu pretium neque. Aliquam bibendum dui non urna pulvinar, id viverra metus commodo. Nulla rhoncus efficitur turpis nec tristique. Donec sodales diam commodo urna ornare aliquam. Nullam non convallis eros, a aliquam nisi. Etiam neque massa, fermentum at turpis vitae, ullamcorper sagittis enim.
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/b_s4KQd2GDg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Конец гайда -->
+  <!-- Поиск -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col">
+            <div class="title-layer">Где попробовать?</div>
+          </div>
+          <div class="w-100"></div>
+          <div class="col">
+            <div class="wrap-login100-form-btn info-layer-button">
+              <div class="login100-form-bgbtn"></div>
+              <div class="login100-form-btn" >
+                Найти
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col">
+            <div class="title-layer">Нужна компания?</div>
+          </div>
+          <div class="w-100"></div>
+          <div class="col">
+            <div class="wrap-login100-form-btn info-layer-button">
+              <div class="login100-form-bgbtn"></div>
+              <div class="login100-form-btn">
+                Найти
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Поиск закончен -->
+  <!-- Уже умеете -->
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="title-layer">Уже умеете? Вот несколько упражнений!</div>
+      </div>
+      <div class="w-100"></div>
+      <div class="col">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="much-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean auctor purus non nunc laoreet faucibus sed vitae nunc. Mauris ultricies lorem sed dui iaculis mollis. Cras leo libero, aliquet ac massa viverra, dictum interdum neque. Curabitur vitae faucibus orci, vitae convallis est. Ut vitae tincidunt nunc, nec volutpat nulla. Cras vel molestie est. Quisque id lacinia erat. Proin maximus massa sed interdum porta. Donec aliquam justo arcu, efficitur imperdiet justo sollicitudin vitae. Vivamus at nunc nec metus gravida sodales sit amet sed lectus. Phasellus finibus ligula eget augue lobortis, sit amet efficitur tortor ultrices. Praesent vel placerat nulla. Nam tellus orci, gravida ut commodo quis, posuere at sem. Sed a nulla varius, fringilla lacus et, euismod lacus. Integer mauris lorem, dictum eget ante eget, hendrerit pellentesque elit. Integer sed felis velit. Phasellus aliquam ut felis id vulputate. Nunc feugiat odio laoreet metus pellentesque pretium. Vivamus porta dignissim orci, tempus laoreet odio ornare id. Suspendisse eu pretium neque. Aliquam bibendum dui non urna pulvinar, id viverra metus commodo. Nulla rhoncus efficitur turpis nec tristique. Donec sodales diam commodo urna ornare aliquam. Nullam non convallis eros, a aliquam nisi. Etiam neque massa, fermentum at turpis vitae, ullamcorper sagittis enim.
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="info-layer-hobby">
+              <div class="image-slider"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Уже умеете конец -->
+  </div>
+</main>
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <img src="">
+      </div>
+    </div>
+  </div>
+</footer>
 </body>
-
 </html>

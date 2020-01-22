@@ -1,4 +1,4 @@
-package com.example.labksp;
+package com.example.labksp.MvC;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;

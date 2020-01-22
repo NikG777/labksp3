@@ -1,18 +1,20 @@
 package com.example.labksp;
 
+import com.example.labksp.Hobby.Hobby;
+import com.example.labksp.Hobby.HobbyRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.stereotype.Service;
-
+//класс для теста
 @Service
 @EnableAutoConfiguration
-public class Application {
+public class ClassForTest {
 
     public static void main(String[] args) {
 
-        ConfigurableApplicationContext context = SpringApplication.run(Application.class);
-        PlaceRepository repository = context.getBean(PlaceRepository.class);
+        ConfigurableApplicationContext context = SpringApplication.run(ClassForTest.class);
+        HobbyRepository repository = context.getBean(HobbyRepository.class);
 
         // save a couple of customers
        // repository.save(new Places("Mirea", "Mirea","Mirea"));
@@ -20,12 +22,12 @@ public class Application {
 
 
         // fetch all customers
-        Iterable<Place> placess = repository.findAll();
+        Iterable<Hobby> placess = repository.findAll();
 
         System.out.println("Customers found with findAll():");
         System.out.println("-------------------------------");
-        for (Place place : placess) {
-            System.out.println(place);
+        for (Hobby hobby : placess) {
+            System.out.println(hobby);
         }
         System.out.println();
         long is = 1;

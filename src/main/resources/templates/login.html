@@ -1,20 +1,48 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
-      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<html lang="ru" xmlns:th="http://www.thymeleaf.org" >
 <head>
-    <title>Spring Security Example </title>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" th:href="@{../css/mainstyle.css}">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
 </head>
 <body>
-<div th:if="${param.error}">
-    Invalid username and password.
-</div>
-<div th:if="${param.logout}">
-    You have been logged out.
-</div>
-<form th:action="@{/login}" method="post">
-    <div><label> User Name : <input type="text" name="username"/> </label></div>
-    <div><label> Password: <input type="password" name="password"/> </label></div>
-    <div><input type="submit" value="Sign In"/></div>
-</form>
+
+<form th:action="@{/login}" method="post" class="login-form" style="height: 530px;">
+    <form >
+        <h1>Войти</h1>
+
+        <div class="txtb">
+            <input type="text" name="username">
+            <span data-placeholder="Логин"></span>
+        </div>
+
+        <div class="txtb">
+            <input type="password"  name="password">
+            <span data-placeholder="Пароль"></span>
+        </div>
+
+        <input type="submit" class="logbtn" value="Войти" th:href="@{/profile}">
+
+        <div class="bottom-text">
+            Нет аккаунта?<a th:href="@{/registration}"> Зарегестрироваться</a>
+        </div>
+
+    </form>
+
+    <script type="text/javascript">
+        $(".txtb input").on("focus",function(){
+            $(this).addClass("focus");
+        });
+
+        $(".txtb input").on("blur",function(){
+            if($(this).val() == "")
+                $(this).removeClass("focus");
+        });
+
+    </script>
+
+
 </body>
 </html>
